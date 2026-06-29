@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нейро-Кинцуги: Базовый курс</title>
+    <style>
+        :root {
+            --bg-color: #fcfbfa;
+            --text-color: #2c2a29;
+            --accent-color: #8c7b6e;
+            --border-color: #e6e3df;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px 15px;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            text-transform: lowercase;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: var(--accent-color);
+            text-transform: lowercase;
+        }
+
+        .intro-text {
+            font-size: 15px;
+            margin-bottom: 30px;
+            color: #555250;
+        }
+
+        /* Стиль аккордеонов (сворачивающихся блоков) */
+        details {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        summary {
+            padding: 18px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            outline: none;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: lowercase;
+            user-select: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "→";
+            font-weight: 300;
+            color: var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(90deg);
+        }
+
+        details[open] {
+            border-color: var(--accent-color);
+        }
+
+        .content {
+            padding: 0 20px 20px 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 15px;
+            color: #3d3a38;
+        }
+
+        .content h3 {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 20px 0 10px 0;
+            color: var(--text-color);
+            text-transform: lowercase;
+        }
+
+        .content p {
+            margin-bottom: 12px;
+        }
+
+        .content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .content li {
+            margin-bottom: 6px;
+        }
+
+        /* Блок для иллюстраций */
+        .image-placeholder {
+            background-color: #f7f5f2;
+            border: 1px dashed var(--accent-color);
+            border-radius: 6px;
+            padding: 30px 15px;
+            text-align: center;
+            margin: 15px 0;
+            color: var(--accent-color);
+            font-size: 13px;
+            text-transform: lowercase;
+        }
+
+        blockquote {
+            border-left: 2px solid var(--accent-color);
+            padding-left: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #555250;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 12px;
+            color: var(--accent-color);
+            text-transform: lowercase;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>нейро-кинцуги</h1>
+        <div class="subtitle">базовый гид по управлению вниманием и геометрии психики</div>
+    </header>
+
+    <p class="intro-text">
+        любая фиксация на проблеме создает в нервной системе устойчивый очаг напряжения. маркер на листе становится инструментом, который помогает выводить это напряжение наружу, связывать разорванные части опыта и расширять способность психики выдерживать этот опыт без перегрузки. изучите эти базовые шаги перед началом практических сессий.
+    </p>
+
+    <details>
+        <summary>1. инструменты: маркеры и бумага</summary>
+        <div class="content">
+            <h3>бумага и её масштаб</h3>
+            <p>формат а4 — оптимальное пространство для регулярных сессий. нервная система способна удерживать фокус внимания на таком объеме без перегрузки. используйте бумагу плотностью от 120 г/м², чтобы маркер не пропитывал лист насквозь и не создавал бессознательный паттерн ограничения рук.</p>
+            
+            <h3>маркеры и линеры</h3>
+            <p>толщина линии управляет скоростью и глубиной интеграции опыта:</p>
+            <ul>
+                <li><strong>толстый маркер (от 2–3 мм):</strong> используется для создания линий поля и крупных фигур фиксации. толстая линия считывается мозгом мгновенно.</li>
+                <li><strong>средний маркер (1–2 мм):</strong> основной рабочий инструмент для ведения линий, наброска композиции и округления.</li>
+                <li><strong>тонкий линер (0.5–0.7 мм):</strong> позволяет прорабатывать мелкие детали и выводить тонкие нюансы сопротивления.</li>
+            </ul>
+        </div>
+    </details>
+
+    <details>
+        <summary>2. графический алфавит: геометрия психики</summary>
+        <div class="content">
+            <p>психика эволюционно приучена мгновенно распознавать базовые геометрические формы и реагировать на них определенным телесным состоянием.</p>
+            
+            <h3>круг — целостность и безопасность</h3>
+            <p>круг не имеет углов и изломов. для нашей зрительной коры это самый гармоничный и безопасный объект. используется там, где системе требуется ресурс, заземление и завершение конфликта.</p>
+            
+            <div class="image-placeholder">
+                [место для иллюстрации: пример гармоничного круга и интеграции его в линии]
+            </div>
+
+            <h3>треугольник — динамика и микростресс</h3>
+            <p>острые углы и векторы треугольника считываются нервной системой как движение, прорыв, но одновременно — как источник потенциального конфликта или угрозы. треугольник запускает контролируемый микростресс, мобилизующий ресурсы системы.</p>
+
+            <h3>квадрат — стабильность и удержание</h3>
+            <p>четыре равные стороны и устойчивое основание. мозг считывает квадрат как надежность, фиксацию и структуру. необходим, когда нужно заземлить сильные эмоциональные всплески и зафиксировать результат.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>3. механика сопряжения (скругление)</summary>
+        <div class="content">
+            <p>при пересечении нейролиний на листе неизбежно образуется множество острых углов. любой острый угол бессознательно считывается нервной системой как конфликт или угроза. сопряжение — это процесс графического объединения разорванных элементов.</p>
+            
+            <div class="image-placeholder">
+                [место для иллюстрации: схема правильного скругления пересечений без заусенцев]
+            </div>
+
+            <h3>правило округления</h3>
+            <ul>
+                <li>вписывайте внутрь каждого пересечения плавную вогнутую дугу, полностью закрашивая образующийся стык.</li>
+                <li>удерживайте внимание на физических реакциях: в момент скругления углов в теле часто возникает сопротивление (задержка дыхания, ком в горле, жар или раздражение).</li>
+                <li>продолжайте округлять пересечения, восстанавливая ровное, глубокое дыхание, пока рисунок не начнет восприниматься целостным.</li>
+            </ul>
+        </div>
+    </details>
+
+    <details>
+        <summary>4. линии поля и фиксация решения</summary>
+        <div class="content">
+            <h3>линии поля: поддержка больших систем</h3>
+            <p>это несколько выраженных, плотных линий, которые силой своего контура доминируют над всеми остальными элементами. это маркер вашего согласия с естественным течением жизни, отказ от идеи тотального контроля и переход к доверию большим процессам (роду, законам времени).</p>
+
+            <h3>фигура фиксации: завершение сценария</h3>
+            <p>фигура фиксации — это графический манифест вашего решения. мы выбираем на листе один ключевой элемент и выделяем его контур очень жирной, плотной линией. это инструмент удержания главного фокуса внимания, который говорит вашей нервной системе: решение найдено, состояние закреплено.</p>
+            
+            <div class="image-placeholder">
+                [место для иллюстрации: готовый рисунок с выделенными линиями поля и фигурой фиксации]
+            </div>
+
+            <blockquote>
+                что меняется в моем теле, когда я соглашаюсь с тем, что в мире есть процессы гораздо больше, чем мой личный контроль, и я могу опираться на них без страха?
+            </blockquote>
+        </div>
+    </details>
+
+    <footer>
+        и ваша психика возьмет из этой инструкции ровно столько, сколько необходимо сейчас.<br>
+        и я даю этому время и место.
+    </footer>
+</div>
+
+</body>
+</html>
