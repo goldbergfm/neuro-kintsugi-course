@@ -12,7 +12,6 @@
             --border-color: #CEC1A8;   /* песок — границы */
             --card-bg: #F1EADA;        /* ваниль — карточки */
             --nav-bg: #CEC1A8;         /* песок — навигация */
-            --input-bg: rgba(206, 193, 168, 0.2);
         }
 
         * {
@@ -44,7 +43,6 @@
             align-items: center;
         }
 
-        /* Элегантное графическое лого в стиле кинцуги */
         .logo-svg {
             width: 80px;
             height: 80px;
@@ -189,6 +187,32 @@
             margin-bottom: 5px;
         }
 
+        .illustration-container {
+            background-color: rgba(206, 193, 168, 0.15);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .illustration-title {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: lowercase;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .illustration-svg {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
         blockquote {
             border-left: 2px solid var(--accent-color);
             padding-left: 12px;
@@ -197,92 +221,6 @@
             color: var(--text-color);
             opacity: 0.85;
             font-size: 13.5px;
-        }
-
-        /* Стили для интерактивного тренажера */
-        .trainer-box {
-            background-color: rgba(206, 193, 168, 0.15);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 15px;
-        }
-
-        .timer-display {
-            font-size: 24px;
-            font-weight: 300;
-            text-align: center;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-            color: var(--text-color);
-        }
-
-        .trainer-textarea {
-            width: 100%;
-            height: 120px;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 12px;
-            font-family: inherit;
-            color: var(--text-color);
-            font-size: 14px;
-            resize: none;
-            outline: none;
-            transition: border-color 0.2s ease;
-        }
-
-        .trainer-textarea:focus {
-            border-color: var(--accent-color);
-        }
-
-        .trainer-controls {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            text-transform: lowercase;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--text-color);
-            color: var(--bg-color);
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-        }
-
-        .btn-secondary {
-            background-color: var(--border-color);
-            color: var(--text-color);
-        }
-
-        .word-count-badge {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 15px;
-            font-weight: 500;
-        }
-
-        .trainer-feedback {
-            margin-top: 15px;
-            padding: 12px;
-            border-radius: 6px;
-            background-color: rgba(201, 169, 110, 0.15);
-            border-left: 3px solid var(--accent-color);
-            font-size: 13px;
-            display: none;
         }
 
         footer {
@@ -302,11 +240,9 @@
 
 <div class="container">
     <header>
-        <!-- Красивый премиальный логотип-символ в стиле кинцуги (круг с золотым швом) -->
         <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="50" cy="50" r="44" stroke="#584738" stroke-width="1" stroke-dasharray="2 2" />
             <circle cx="50" cy="50" r="40" stroke="#CEC1A8" stroke-width="1.5" />
-            <!-- Золотая линия разлома/соединения кинцуги -->
             <path d="M15 50 C 30 45, 35 60, 50 48 C 65 35, 70 55, 85 50" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round" />
             <path d="M50 48 C 48 30, 55 25, 52 10" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round" />
         </svg>
@@ -315,11 +251,10 @@
     </header>
 
     <div class="tabs">
-        <button class="tab-btn active" onclick="openTab('theory')">базовый базис</button>
+        <button class="tab-btn active" onclick="openTab('theory')">основы метода</button>
         <button class="tab-btn" onclick="openTab('algorithms')">практика (4 алгоритма)</button>
     </div>
 
-    <!-- ВКЛАДКА 1: ТЕОРИЯ -->
     <div id="theory" class="tab-content active">
         <p class="intro-text">
             мелкая моторика маркера становится инструментом, который выводит соматическое напряжение наружу, связывает разорванные части опыта и расширяет способность психики выдерживать стресс без перегрузки.
@@ -364,43 +299,34 @@
                 <p>острые углы и векторы треугольника запускают контролируемый микростресс, мобилизующий ресурсы системы. <em>примечание: в базовой практике пользователя не используется ради сохранения экологичности процесса.</em></p>
                 <h3>нейрографическая линия (линия пискарева)</h3>
                 <p>главный актив метода. она не повторяет себя на каждом участке движения, и мы ведем её туда, где не ожидаем увидеть. она заставляет мозг формировать новые, нешаблонные нейронные маршруты.</p>
+                
+                <div class="illustration-container">
+                    <div class="illustration-title">характер линии: стереотипная (вверху) и нейрографическая (внизу)</div>
+                    <svg class="illustration-svg" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 25 Q 32.5 5, 55 25 T 100 25 T 145 25 T 190 25 T 235 25 T 280 25" stroke="#CEC1A8" stroke-width="1.5" stroke-dasharray="3 3" />
+                        <path d="M10 75 C 30 70, 45 85, 65 72 C 85 60, 95 80, 115 75 C 140 70, 150 90, 175 78 C 200 65, 215 85, 240 74 C 260 65, 275 75, 290 70" stroke="#584738" stroke-width="2.5" stroke-linecap="round" />
+                        <circle cx="115" cy="75" r="3" fill="#C9A96E" />
+                        <circle cx="240" cy="74" r="3" fill="#C9A96E" />
+                    </svg>
+                </div>
             </div>
         </details>
 
-        <details id="details-trainer">
+        <details>
             <summary>4. разгон нейросети: тест «20 слов за 2 минуты»</summary>
             <div class="content">
-                <p>инструмент активации нейронного контура вашей темы. когда мы пишем слова на скорость, мы обходим логические фильтры сознания.</p>
-                <p><strong>механика:</strong> включите таймер на 120 секунд. задача — безостановочно писать любые слова-ассоциации в контексте темы.</p>
-                
-                <!-- Встроенный интерактивный тренажер -->
-                <div class="trainer-box">
-                    <div class="timer-display" id="timer">02:00</div>
-                    <textarea class="trainer-textarea" id="words-input" placeholder="запустите таймер и пишите сюда слова через запятую или пробел..." disabled></textarea>
-                    
-                    <div class="trainer-controls">
-                        <button class="btn btn-primary" id="start-btn" onclick="startTrainer()">начать тест</button>
-                        <button class="btn btn-secondary" id="reset-btn" onclick="resetTrainer()" style="display:none;">сбросить</button>
-                    </div>
-
-                    <div class="word-count-badge" id="word-counter" style="display:none;">
-                        написано слов: <span id="count-value" style="color: var(--accent-color); font-weight:600;">0</span>
-                    </div>
-
-                    <div class="trainer-feedback" id="feedback-box"></div>
-                </div>
-
-                <blockquote>
-                    <strong>критерий эффективности:</strong> если за 2 минуты написано менее 17–20 слов, это маркер сильного стартового сопротивления блока. продолжайте расписывать руку, пока поток не пойдет свободно.
+                <p>инструмент активации нейронного контура вашей темы. когда мы пишем слова на скорость, мы обходим логические фильтры сознания и поднимаем пласт бессознательных ассоциаций.</p>
+                <p><strong>механика:</strong> включите таймер на своем телефоне на 120 секунд. зафиксируйте тему на листе и начните безостановочно писать любые слова-ассоциации, которые приходят в голову в контексте этого запроса.</p>
+                blockquote>
+                    <strong>критерий эффективности:</strong> если за 2 минуты написано менее 20 слов, это маркер выраженного стартового сопротивления. продолжайте расписывать руку или сделайте глубокий осознанный выдох перед рисованием, пока поток мыслей не пойдет свободно.
                 </blockquote>
             </div>
         </details>
     </div>
 
-    <!-- ВКЛАДКА 2: АЛГОРИТМЫ -->
     <div id="algorithms" class="tab-content">
         <p class="intro-text">
-            сквозной базовый алгоритм (все 7 шагов) — это незыблемый костяк любого рисунка. порядок шагов важно строго соблюдать для правильной интеграции мысли в подсознание.
+            сквозной базовый алгоритм (все 7 шагов) — это основа любого рисунка. порядок шагов важно соблюдать.
         </p>
 
         <details>
@@ -411,9 +337,23 @@
                 <ol>
                     <li><strong>актуализация:</strong> формулирование запроса + тест «20 слов за 2 минуты».</li>
                     <li><strong>катарсис (выброс):</strong> собираем всё напряжение из тела в руку и за 2–3 секунды делаем резкое, экспрессивное чирканье на листе.</li>
-                    <li><strong>сопряжение:</strong> тотально скругляем абсолютно все углы внутри выброса и на стыках с ним.</li>
-                    <li><strong>растворение (фигура и фон):</strong> выводим линии от углов выброса к краям листа, полностью растворяя проблему в общем пространстве.</li>
-                    <li><strong>интеграция и фиксация:</strong> вносим цвет (объединяя минимум 2-3 соседние ячейки), проводим мощные линии поля и фиксируем итоговый круг.</li>
+                    <li><strong>сопряжение:</strong> скругляем углы внутри выброса и на стыках с ним.</li>
+                    
+                    <div class="illustration-container">
+                        <div class="illustration-title">механика сопряжения: скругление внутреннего угла пересечения</div>
+                        <svg class="illustration-svg" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 60 L 180 60" stroke="#CEC1A8" stroke-width="1.5" />
+                            <path d="M100 15 L 100 105" stroke="#CEC1A8" stroke-width="1.5" />
+                            <path d="M100 45 A 15 15 0 0 0 85 60" fill="none" stroke="#584738" stroke-width="3" stroke-linecap="round" />
+                            <path d="M100 45 A 15 15 0 0 1 115 60" fill="none" stroke="#584738" stroke-width="3" stroke-linecap="round" />
+                            <path d="M100 75 A 15 15 0 0 1 85 60" fill="none" stroke="#584738" stroke-width="3" stroke-linecap="round" />
+                            <path d="M100 75 A 15 15 0 0 0 115 60" fill="none" stroke="#584738" stroke-width="3" stroke-linecap="round" />
+                            <circle cx="100" cy="60" r="5" fill="#C9A96E" />
+                        </svg>
+                    </div>
+
+                    <li><strong>растворение (фигура и фон):</strong> выводим линии от углов выброса к краям листа, соединяя фигуру выброса с пространством листа.</li>
+                    <li><strong>интеграция и фиксация:</strong> вносим цвет (объединяя минимум 2-3 соседние ячейки), проводим линии поля и фиксируем итоговый круг.</li>
                 </ol>
             </div>
         </details>
@@ -450,7 +390,6 @@
 </div>
 
 <script>
-    // Логика табов
     function openTab(tabId) {
         const contents = document.querySelectorAll('.tab-content');
         contents.forEach(content => content.classList.remove('active'));
@@ -460,85 +399,6 @@
         
         document.getElementById(tabId).classList.add('active');
         event.currentTarget.classList.add('active');
-    }
-
-    // Логика интерактивного тренажера слов
-    let countdown;
-    let timeLeft = 120;
-    let isRunning = false;
-
-    const timerDisplay = document.getElementById('timer');
-    const startBtn = document.getElementById('start-btn');
-    const resetBtn = document.getElementById('reset-btn');
-    const wordsInput = document.getElementById('words-input');
-    const counterDisplay = document.getElementById('word-counter');
-    const countValue = document.getElementById('count-value');
-    const feedbackBox = document.getElementById('feedback-box');
-
-    function updateWordCount() {
-        const text = wordsInput.value.trim();
-        if (text === '') {
-            countValue.textContent = '0';
-            return 0;
-        }
-        // Разделяем слова по пробелам и знакам препинания
-        const words = text.split(/[\s,.\-\/]+/).filter(word => word.length > 0);
-        countValue.textContent = words.length;
-        return words.length;
-    }
-
-    wordsInput.addEventListener('input', updateWordCount);
-
-    function startTrainer() {
-        if (isRunning) return;
-        
-        isRunning = true;
-        wordsInput.disabled = false;
-        wordsInput.focus();
-        startBtn.style.display = 'none';
-        resetBtn.style.display = 'block';
-        counterDisplay.style.display = 'block';
-        feedbackBox.style.display = 'none';
-
-        countdown = setInterval(() => {
-            timeLeft--;
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
-            timerDisplay.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-
-            if (timeLeft <= 0) {
-                endTrainer();
-            }
-        }, 1000);
-    }
-
-    function endTrainer() {
-        clearInterval(countdown);
-        isRunning = false;
-        wordsInput.disabled = true;
-        
-        const finalCount = updateWordCount();
-        feedbackBox.style.display = 'block';
-
-        if (finalCount < 17) {
-            feedbackBox.innerHTML = `<strong>результат: ${finalCount} слов.</strong> у вас наблюдается выраженное стартовое сопротивление или когнитивный блок по теме. перед рисованием рекомендуется еще немного расписать руку или сделать глубокий выдох, чтобы сонастроиться с телом.`;
-        } else {
-            feedbackBox.innerHTML = `<strong>результат: ${finalCount} слов!</strong> отличный показатель. ваш нейронный контур полностью активирован, фокус внимания настроен. нервная система готова к эффективной интеграции через маркер.`;
-        }
-    }
-
-    function resetTrainer() {
-        clearInterval(countdown);
-        isRunning = false;
-        timeLeft = 120;
-        timerDisplay.textContent = '02:00';
-        wordsInput.value = '';
-        wordsInput.disabled = true;
-        startBtn.style.display = 'block';
-        resetBtn.style.display = 'none';
-        counterDisplay.style.display = 'none';
-        feedbackBox.style.display = 'none';
-        countValue.textContent = '0';
     }
 </script>
 
