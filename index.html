@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Нейро-Кинцуги: Базовый курс</title>
+    <title>Нейро-Кинцуги: Интегративное Руководство</title>
     <style>
         :root {
-            --bg-color: #fcfbfa;
-            --text-color: #2c2a29;
-            --accent-color: #8c7b6e;
-            --border-color: #e6e3df;
-            --card-bg: #ffffff;
+            --bg-color: #F1EADA;       /* ваниль — фон */
+            --text-color: #584738;     /* махагон — основной текст */
+            --accent-color: #C9A96E;   /* золото — акценты */
+            --border-color: #CEC1A8;   /* песок — границы */
+            --card-bg: #F1EADA;        /* ваниль — карточки */
+            --nav-bg: #CEC1A8;         /* песок — навигация */
+            --input-bg: rgba(206, 193, 168, 0.2);
         }
 
         * {
@@ -24,7 +26,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            padding: 20px 15px;
+            padding: 30px 15px;
         }
 
         .container {
@@ -33,45 +35,100 @@
         }
 
         header {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
             border-bottom: 1px solid var(--border-color);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Элегантное графическое лого в стиле кинцуги */
+        .logo-svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            opacity: 0.95;
         }
 
         h1 {
-            font-size: 24px;
-            font-weight: 400;
+            font-size: 28px;
+            font-weight: 300;
             letter-spacing: -0.5px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--text-color);
             text-transform: lowercase;
         }
 
         .subtitle {
+            font-size: 13px;
+            color: var(--text-color);
+            opacity: 0.8;
+            text-transform: lowercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tabs {
+            display: flex;
+            background-color: var(--nav-bg);
+            padding: 4px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px;
+            background: none;
+            border: none;
             font-size: 14px;
-            color: var(--accent-color);
+            font-weight: 500;
+            color: var(--text-color);
+            opacity: 0.7;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
             text-transform: lowercase;
         }
 
-        .intro-text {
-            font-size: 15px;
-            margin-bottom: 30px;
-            color: #555250;
+        .tab-btn.active {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            opacity: 1;
+            box-shadow: 0 2px 4px rgba(88,71,56,0.1);
         }
 
-        /* Стиль аккордеонов (сворачивающихся блоков) */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .intro-text {
+            font-size: 14px;
+            margin-bottom: 25px;
+            color: var(--text-color);
+            opacity: 0.9;
+            font-style: italic;
+            text-align: center;
+            line-height: 1.5;
+        }
+
         details {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
         summary {
-            padding: 18px 20px;
-            font-size: 16px;
+            padding: 16px 20px;
+            font-size: 15px;
             font-weight: 500;
             cursor: pointer;
             outline: none;
@@ -100,65 +157,144 @@
 
         details[open] {
             border-color: var(--accent-color);
+            box-shadow: 0 4px 12px rgba(201,169,110,0.08);
         }
 
         .content {
             padding: 0 20px 20px 20px;
             border-top: 1px solid var(--border-color);
-            font-size: 15px;
-            color: #3d3a38;
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.95;
         }
 
         .content h3 {
-            font-size: 16px;
-            font-weight: 500;
-            margin: 20px 0 10px 0;
+            font-size: 15px;
+            font-weight: 600;
+            margin: 18px 0 8px 0;
             color: var(--text-color);
             text-transform: lowercase;
         }
 
         .content p {
+            margin-bottom: 10px;
+        }
+
+        .content ul, .content ol {
+            margin-left: 20px;
             margin-bottom: 12px;
         }
 
-        .content ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-
         .content li {
-            margin-bottom: 6px;
-        }
-
-        /* Блок для иллюстраций */
-        .image-placeholder {
-            background-color: #f7f5f2;
-            border: 1px dashed var(--accent-color);
-            border-radius: 6px;
-            padding: 30px 15px;
-            text-align: center;
-            margin: 15px 0;
-            color: var(--accent-color);
-            font-size: 13px;
-            text-transform: lowercase;
+            margin-bottom: 5px;
         }
 
         blockquote {
             border-left: 2px solid var(--accent-color);
-            padding-left: 15px;
-            margin: 20px 0;
+            padding-left: 12px;
+            margin: 15px 0;
             font-style: italic;
-            color: #555250;
+            color: var(--text-color);
+            opacity: 0.85;
+            font-size: 13.5px;
+        }
+
+        /* Стили для интерактивного тренажера */
+        .trainer-box {
+            background-color: rgba(206, 193, 168, 0.15);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        .timer-display {
+            font-size: 24px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            color: var(--text-color);
+        }
+
+        .trainer-textarea {
+            width: 100%;
+            height: 120px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px;
+            font-family: inherit;
+            color: var(--text-color);
+            font-size: 14px;
+            resize: none;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .trainer-textarea:focus {
+            border-color: var(--accent-color);
+        }
+
+        .trainer-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            text-transform: lowercase;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background-color: var(--border-color);
+            color: var(--text-color);
+        }
+
+        .word-count-badge {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .trainer-feedback {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 6px;
+            background-color: rgba(201, 169, 110, 0.15);
+            border-left: 3px solid var(--accent-color);
+            font-size: 13px;
+            display: none;
         }
 
         footer {
-            margin-top: 50px;
+            margin-top: 40px;
             padding-top: 20px;
             border-top: 1px solid var(--border-color);
             text-align: center;
-            font-size: 12px;
-            color: var(--accent-color);
+            font-size: 11px;
+            color: var(--text-color);
+            opacity: 0.7;
             text-transform: lowercase;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -166,92 +302,245 @@
 
 <div class="container">
     <header>
+        <!-- Красивый премиальный логотип-символ в стиле кинцуги (круг с золотым швом) -->
+        <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="44" stroke="#584738" stroke-width="1" stroke-dasharray="2 2" />
+            <circle cx="50" cy="50" r="40" stroke="#CEC1A8" stroke-width="1.5" />
+            <!-- Золотая линия разлома/соединения кинцуги -->
+            <path d="M15 50 C 30 45, 35 60, 50 48 C 65 35, 70 55, 85 50" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round" />
+            <path d="M50 48 C 48 30, 55 25, 52 10" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
         <h1>нейро-кинцуги</h1>
-        <div class="subtitle">базовый гид по управлению вниманием и геометрии психики</div>
+        <div class="subtitle">нейрографика · база перед первым рисунком</div>
     </header>
 
-    <p class="intro-text">
-        любая фиксация на проблеме создает в нервной системе устойчивый очаг напряжения. маркер на листе становится инструментом, который помогает выводить это напряжение наружу, связывать разорванные части опыта и расширять способность психики выдерживать этот опыт без перегрузки. изучите эти базовые шаги перед началом практических сессий.
-    </p>
+    <div class="tabs">
+        <button class="tab-btn active" onclick="openTab('theory')">базовый базис</button>
+        <button class="tab-btn" onclick="openTab('algorithms')">практика (4 алгоритма)</button>
+    </div>
 
-    <details>
-        <summary>1. инструменты: маркеры и бумага</summary>
-        <div class="content">
-            <h3>бумага и её масштаб</h3>
-            <p>формат а4 — оптимальное пространство для регулярных сессий. нервная система способна удерживать фокус внимания на таком объеме без перегрузки. используйте бумагу плотностью от 120 г/м², чтобы маркер не пропитывал лист насквозь и не создавал бессознательный паттерн ограничения рук.</p>
-            
-            <h3>маркеры и линеры</h3>
-            <p>толщина линии управляет скоростью и глубиной интеграции опыта:</p>
-            <ul>
-                <li><strong>толстый маркер (от 2–3 мм):</strong> используется для создания линий поля и крупных фигур фиксации. толстая линия считывается мозгом мгновенно.</li>
-                <li><strong>средний маркер (1–2 мм):</strong> основной рабочий инструмент для ведения линий, наброска композиции и округления.</li>
-                <li><strong>тонкий линер (0.5–0.7 мм):</strong> позволяет прорабатывать мелкие детали и выводить тонкие нюансы сопротивления.</li>
-            </ul>
-        </div>
-    </details>
+    <!-- ВКЛАДКА 1: ТЕОРИЯ -->
+    <div id="theory" class="tab-content active">
+        <p class="intro-text">
+            мелкая моторика маркера становится инструментом, который выводит соматическое напряжение наружу, связывает разорванные части опыта и расширяет способность психики выдерживать стресс без перегрузки.
+        </p>
 
-    <details>
-        <summary>2. графический алфавит: геометрия психики</summary>
-        <div class="content">
-            <p>психика эволюционно приучена мгновенно распознавать базовые геометрические формы и реагировать на них определенным телесным состоянием.</p>
-            
-            <h3>круг — целостность и безопасность</h3>
-            <p>круг не имеет углов и изломов. для нашей зрительной коры это самый гармоничный и безопасный объект. используется там, где системе требуется ресурс, заземление и завершение конфликта.</p>
-            
-            <div class="image-placeholder">
-                [место для иллюстрации: пример гармоничного круга и интеграции его в линии]
+        <details>
+            <summary>1. психолингвистика запроса: 4 правила темы</summary>
+            <div class="content">
+                <p>мозг материализует и расширяет ту точку, на которой зафиксирован фокус внимания. перед рисованием проверяйте тему по чек-листу:</p>
+                <h3>правило 1. суверенность системы</h3>
+                <p>запрос должен быть сформулирован строго о себе и через себя. директивное вмешательство в чужие нейронные контуры без согласия неэффективно.</p>
+                <h3>правило 2. разворот из дефицита в профицит</h3>
+                <p>исключите маркеры борьбы («борюсь», «избавляюсь»). вместо «закрытие кредитов» — «я финансово свободна и независима».</p>
+                <h3>правило 3. феномен нелинейного времени</h3>
+                <p>конструкции в будущем времени («я куплю») или маркер «хочу» воспринимаются мозгом как бесконечный процесс. фиксируйте тему в настоящем или прошедшем времени.</p>
+                <h3>правило 4. табу на отрицание</h3>
+                <p>частица «не» блокирует чистый образ. конструкция «я не ем сладкое» пересобирается в «я равнодушна к сладкому».</p>
             </div>
+        </details>
 
-            <h3>треугольник — динамика и микростресс</h3>
-            <p>острые углы и векторы треугольника считываются нервной системой как движение, прорыв, но одновременно — как источник потенциального конфликта или угрозы. треугольник запускает контролируемый микростресс, мобилизующий ресурсы системы.</p>
-
-            <h3>квадрат — стабильность и удержание</h3>
-            <p>четыре равные стороны и устойчивое основание. мозг считывает квадрат как надежность, фиксацию и структуру. необходим, когда нужно заземлить сильные эмоциональные всплески и зафиксировать результат.</p>
-        </div>
-    </details>
-
-    <details>
-        <summary>3. механика сопряжения (скругление)</summary>
-        <div class="content">
-            <p>при пересечении нейролиний на листе неизбежно образуется множество острых углов. любой острый угол бессознательно считывается нервной системой как конфликт или угроза. сопряжение — это процесс графического объединения разорванных элементов.</p>
-            
-            <div class="image-placeholder">
-                [место для иллюстрации: схема правильного скругления пересечений без заусенцев]
+        <details>
+            <summary>2. три вектора внимания: осознанная рефлексия</summary>
+            <div class="content">
+                <p>для качественной интеграции опыта ведите непрерывный трекинг состояния по трем точкам восприятия:</p>
+                <ul>
+                    <li><strong>визуальный трекинг:</strong> отслеживание изменений на листе (масштаб композиции, плотность линий).</li>
+                    <li><strong>эмоциональный трекинг:</strong> динамика состояний — от стартовой апатии или раздражения до появления азарта и спокойствия.</li>
+                    <li><strong>телесный трекинг (соматика):</strong> жар, озноб, задержка дыхания, мышечные зажимы — это прямые маркеры работы с реальными очагами напряжения в головном мозге.</li>
+                </ul>
             </div>
+        </details>
 
-            <h3>правило округления</h3>
-            <ul>
-                <li>вписывайте внутрь каждого пересечения плавную вогнутую дугу, полностью закрашивая образующийся стык.</li>
-                <li>удерживайте внимание на физических реакциях: в момент скругления углов в теле часто возникает сопротивление (задержка дыхания, ком в горле, жар или раздражение).</li>
-                <li>продолжайте округлять пересечения, восстанавливая ровное, глубокое дыхание, пока рисунок не начнет восприниматься целостным.</li>
-            </ul>
-        </div>
-    </details>
-
-    <details>
-        <summary>4. линии поля и фиксация решения</summary>
-        <div class="content">
-            <h3>линии поля: поддержка больших систем</h3>
-            <p>это несколько выраженных, плотных линий, которые силой своего контура доминируют над всеми остальными элементами. это маркер вашего согласия с естественным течением жизни, отказ от идеи тотального контроля и переход к доверию большим процессам (роду, законам времени).</p>
-
-            <h3>фигура фиксации: завершение сценария</h3>
-            <p>фигура фиксации — это графический манифест вашего решения. мы выбираем на листе один ключевой элемент и выделяем его контур очень жирной, плотной линией. это инструмент удержания главного фокуса внимания, который говорит вашей нервной системе: решение найдено, состояние закреплено.</p>
-            
-            <div class="image-placeholder">
-                [место для иллюстрации: готовый рисунок с выделенными линиями поля и фигурой фиксации]
+        <details>
+            <summary>3. графический алфавит: геометрия психики</summary>
+            <div class="content">
+                <p>психика мгновенно распознает базовые геометрические формы и реагирует на них соматическим состоянием:</p>
+                <h3>круг — целостность, безопасность и ресурс</h3>
+                <p>круг не имеет изломов. для зрительной коры это самый гармоничный и безопасный объект. используется для заземления и завершения внутренних конфликтов.</p>
+                <h3>квадрат — стабильность, фиксация и структура</h3>
+                <p>мозг считывает квадрат как надежность и фиксацию результата. необходим, когда нужно структурировать хаос и заземлить сильные эмоции.</p>
+                <h3>треугольник — динамика, инерция и микростресс</h3>
+                <p>острые углы и векторы треугольника запускают контролируемый микростресс, мобилизующий ресурсы системы. <em>примечание: в базовой практике пользователя не используется ради сохранения экологичности процесса.</em></p>
+                <h3>нейрографическая линия (линия пискарева)</h3>
+                <p>главный актив метода. она не повторяет себя на каждом участке движения, и мы ведем её туда, где не ожидаем увидеть. она заставляет мозг формировать новые, нешаблонные нейронные маршруты.</p>
             </div>
+        </details>
 
-            <blockquote>
-                что меняется в моем теле, когда я соглашаюсь с тем, что в мире есть процессы гораздо больше, чем мой личный контроль, и я могу опираться на них без страха?
-            </blockquote>
-        </div>
-    </details>
+        <details id="details-trainer">
+            <summary>4. разгон нейросети: тест «20 слов за 2 минуты»</summary>
+            <div class="content">
+                <p>инструмент активации нейронного контура вашей темы. когда мы пишем слова на скорость, мы обходим логические фильтры сознания.</p>
+                <p><strong>механика:</strong> включите таймер на 120 секунд. задача — безостановочно писать любые слова-ассоциации в контексте темы.</p>
+                
+                <!-- Встроенный интерактивный тренажер -->
+                <div class="trainer-box">
+                    <div class="timer-display" id="timer">02:00</div>
+                    <textarea class="trainer-textarea" id="words-input" placeholder="запустите таймер и пишите сюда слова через запятую или пробел..." disabled></textarea>
+                    
+                    <div class="trainer-controls">
+                        <button class="btn btn-primary" id="start-btn" onclick="startTrainer()">начать тест</button>
+                        <button class="btn btn-secondary" id="reset-btn" onclick="resetTrainer()" style="display:none;">сбросить</button>
+                    </div>
+
+                    <div class="word-count-badge" id="word-counter" style="display:none;">
+                        написано слов: <span id="count-value" style="color: var(--accent-color); font-weight:600;">0</span>
+                    </div>
+
+                    <div class="trainer-feedback" id="feedback-box"></div>
+                </div>
+
+                <blockquote>
+                    <strong>критерий эффективности:</strong> если за 2 минуты написано менее 17–20 слов, это маркер сильного стартового сопротивления блока. продолжайте расписывать руку, пока поток не пойдет свободно.
+                </blockquote>
+            </div>
+        </details>
+    </div>
+
+    <!-- ВКЛАДКА 2: АЛГОРИТМЫ -->
+    <div id="algorithms" class="tab-content">
+        <p class="intro-text">
+            сквозной базовый алгоритм (все 7 шагов) — это незыблемый костяк любого рисунка. порядок шагов важно строго соблюдать для правильной интеграции мысли в подсознание.
+        </p>
+
+        <details>
+            <summary>алгоритм 1. классический асо-1 (снятие ограничений)</summary>
+            <div class="content">
+                <p>инструмент для работы с острыми состояниями при сильном стрессе, панике, финансовых затыках или ступоре.</p>
+                <h3>пошаговый протокол:</h3>
+                <ol>
+                    <li><strong>актуализация:</strong> формулирование запроса + тест «20 слов за 2 минуты».</li>
+                    <li><strong>катарсис (выброс):</strong> собираем всё напряжение из тела в руку и за 2–3 секунды делаем резкое, экспрессивное чирканье на листе.</li>
+                    <li><strong>сопряжение:</strong> тотально скругляем абсолютно все углы внутри выброса и на стыках с ним.</li>
+                    <li><strong>растворение (фигура и фон):</strong> выводим линии от углов выброса к краям листа, полностью растворяя проблему в общем пространстве.</li>
+                    <li><strong>интеграция и фиксация:</strong> вносим цвет (объединяя минимум 2-3 соседние ячейки), проводим мощные линии поля и фиксируем итоговый круг.</li>
+                </ol>
+            </div>
+        </details>
+
+        <details>
+            <summary>алгоритм 2. асо-экспресс</summary>
+            <div class="content">
+                <p>используется в полевых условиях, когда необходимо оперативно снизить пик соматического напряжения (например, перед важным звонком или при внезапном страхе).</p>
+                <p><strong>механика:</strong> берется маленький листок и ручка. делается микро-выброс. округляются только самые очевидные, бросающиеся в глаза углы за 3–5 минут до ощущения выдоха. линии поля и цвет здесь вторичны.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>алгоритм 3. асо: расширение контекста (на листах)</summary>
+            <div class="content">
+                <p>используется, когда масштаб затыка велик (системный застой, долгие суды) и выброс физически «не помещается» на один лист, вызывая сильное телесное сопротивление.</p>
+                <p><strong>механика:</strong> под основной лист подкладываются еще 2–4 листа бумаги по бокам. линии выплеска и растворения осознанно растягиваются далеко за границы первоначального листа, что расширяет емкость психики и позволяет ей вместить больший объем энергии.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>алгоритм 4. авн (алгоритм выявления намерений)</summary>
+            <div class="content">
+                <p>чистое моделирование будущего. используется, когда явных ограничений нет, но нужно определиться с целями, набрать ресурс, увидеть новые возможности или сделать выбор.</p>
+                <p><strong>механика:</strong> здесь нет катарсиса (выброса). рисунок начинается сразу с заполнения листа мягкими, свободными нейрографическими линиями фона. затем в этом поле линий маркер начинает интуитивно нащупывать и проявлять скрытые круги (цели, ресурсы, возможности). все пересечения бережно сопрягаются.</p>
+            </div>
+        </details>
+    </div>
 
     <footer>
-        и ваша психика возьмет из этой инструкции ровно столько, сколько необходимо сейчас.<br>
-        и я даю этому время и место.
+        интегративное руководство пользователя • 2026<br>
+        психика возьмет ровно столько, сколько необходимо сейчас.
     </footer>
 </div>
+
+<script>
+    // Логика табов
+    function openTab(tabId) {
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => content.classList.remove('active'));
+        
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+
+    // Логика интерактивного тренажера слов
+    let countdown;
+    let timeLeft = 120;
+    let isRunning = false;
+
+    const timerDisplay = document.getElementById('timer');
+    const startBtn = document.getElementById('start-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const wordsInput = document.getElementById('words-input');
+    const counterDisplay = document.getElementById('word-counter');
+    const countValue = document.getElementById('count-value');
+    const feedbackBox = document.getElementById('feedback-box');
+
+    function updateWordCount() {
+        const text = wordsInput.value.trim();
+        if (text === '') {
+            countValue.textContent = '0';
+            return 0;
+        }
+        // Разделяем слова по пробелам и знакам препинания
+        const words = text.split(/[\s,.\-\/]+/).filter(word => word.length > 0);
+        countValue.textContent = words.length;
+        return words.length;
+    }
+
+    wordsInput.addEventListener('input', updateWordCount);
+
+    function startTrainer() {
+        if (isRunning) return;
+        
+        isRunning = true;
+        wordsInput.disabled = false;
+        wordsInput.focus();
+        startBtn.style.display = 'none';
+        resetBtn.style.display = 'block';
+        counterDisplay.style.display = 'block';
+        feedbackBox.style.display = 'none';
+
+        countdown = setInterval(() => {
+            timeLeft--;
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerDisplay.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+            if (timeLeft <= 0) {
+                endTrainer();
+            }
+        }, 1000);
+    }
+
+    function endTrainer() {
+        clearInterval(countdown);
+        isRunning = false;
+        wordsInput.disabled = true;
+        
+        const finalCount = updateWordCount();
+        feedbackBox.style.display = 'block';
+
+        if (finalCount < 17) {
+            feedbackBox.innerHTML = `<strong>результат: ${finalCount} слов.</strong> у вас наблюдается выраженное стартовое сопротивление или когнитивный блок по теме. перед рисованием рекомендуется еще немного расписать руку или сделать глубокий выдох, чтобы сонастроиться с телом.`;
+        } else {
+            feedbackBox.innerHTML = `<strong>результат: ${finalCount} слов!</strong> отличный показатель. ваш нейронный контур полностью активирован, фокус внимания настроен. нервная система готова к эффективной интеграции через маркер.`;
+        }
+    }
+
+    function resetTrainer() {
+        clearInterval(countdown);
+        isRunning = false;
+        timeLeft = 120;
+        timerDisplay.textContent = '02:00';
+        wordsInput.value = '';
+        wordsInput.disabled = true;
+        startBtn.style.display = 'block';
+        resetBtn.style.display = 'none';
+        counterDisplay.style.display = 'none';
+        feedbackBox.style.display = 'none';
+        countValue.textContent = '0';
+    }
+</script>
 
 </body>
 </html>
