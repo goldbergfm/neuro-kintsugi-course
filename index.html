@@ -24,8 +24,8 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.7;
-            padding: 40px 20px;
+            line-height: 1.6;
+            padding: 30px 15px;
         }
 
         .container {
@@ -34,7 +34,7 @@
         }
 
         header {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             padding-bottom: 25px;
             border-bottom: 1px solid var(--border-color);
             text-align: center;
@@ -54,7 +54,7 @@
             font-size: 28px;
             font-weight: 300;
             letter-spacing: -0.5px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--text-color);
             text-transform: lowercase;
         }
@@ -72,12 +72,12 @@
             background-color: var(--nav-bg);
             padding: 4px;
             border-radius: 8px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .tab-btn {
             flex: 1;
-            padding: 14px;
+            padding: 12px;
             background: none;
             border: none;
             font-size: 14px;
@@ -107,25 +107,25 @@
 
         .intro-text {
             font-size: 14px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             color: var(--text-color);
             opacity: 0.9;
             font-style: italic;
             text-align: center;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         details {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
         summary {
-            padding: 18px 20px;
+            padding: 16px 20px;
             font-size: 15px;
             font-weight: 500;
             cursor: pointer;
@@ -134,6 +134,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            text-transform: lowercase;
             user-select: none;
         }
 
@@ -158,7 +159,7 @@
         }
 
         .content {
-            padding: 25px 20px 25px 20px;
+            padding: 0 20px 20px 20px;
             border-top: 1px solid var(--border-color);
             font-size: 14px;
             color: var(--text-color);
@@ -168,32 +169,35 @@
         .content h3 {
             font-size: 15px;
             font-weight: 600;
-            margin: 20px 0 12px 0;
+            margin: 18px 0 8px 0;
             color: var(--text-color);
             text-transform: lowercase;
         }
 
         .content p {
-            margin-bottom: 14px;
+            margin-bottom: 10px;
         }
 
-        /* Выравнивание шрифта для списков и цифр, чтобы убрать разнокалиберность */
         .content ul, .content ol {
             margin-left: 20px;
-            margin-bottom: 16px;
-            font-variant-numeric: diagonal-fractions;
+            margin-bottom: 12px;
         }
 
         .content li {
-            margin-bottom: 8px;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        /* Стиль для аббревиатур, чтобы они выглядели аккуратно */
+        .abbr-text {
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
         }
 
         blockquote {
             border-left: 2px solid var(--accent-color);
-            padding-left: 14px;
-            margin: 20px 0;
+            padding-left: 12px;
+            margin: 15px 0;
             font-style: italic;
             color: var(--text-color);
             opacity: 0.85;
@@ -201,7 +205,7 @@
         }
 
         footer {
-            margin-top: 50px;
+            margin-top: 40px;
             padding-top: 20px;
             border-top: 1px solid var(--border-color);
             text-align: center;
@@ -238,7 +242,7 @@
         </p>
 
         <details>
-            <summary><span style="text-transform: lowercase;">1. психолингвистика запроса: 4 правила темы</span></summary>
+            <summary>1. психолингвистика запроса: 4 правила темы</summary>
             <div class="content">
                 <p>мозг материализует и расширяет ту точку, на которой зафиксирован фокус внимания. перед рисованием проверяйте тему по чек-листу:</p>
                 <h3>правило 1. суверенность системы</h3>
@@ -253,7 +257,7 @@
         </details>
 
         <details>
-            <summary><span style="text-transform: lowercase;">2. три вектора внимания: осознанная рефлексия</span></summary>
+            <summary>2. три вектора внимания: осознанная рефлексия</summary>
             <div class="content">
                 <p>для качественной интеграции опыта ведите непрерывный трекинг состояния по трем точкам восприятия:</p>
                 <ul>
@@ -265,7 +269,7 @@
         </details>
 
         <details>
-            <summary><span style="text-transform: lowercase;">3. графический алфавит: геометрия психики</span></summary>
+            <summary>3. графический алфавит: геометрия психики</summary>
             <div class="content">
                 <p>психика мгновенно распознает базовые геометрические формы и реагирует на них соматическим состоянием:</p>
                 <h3>круг — целостность, безопасность и ресурс</h3>
@@ -280,7 +284,7 @@
         </details>
 
         <details>
-            <summary><span style="text-transform: lowercase;">4. разгон нейросети: тест «20 слов за 2 минуты»</span></summary>
+            <summary>4. разгон нейросети: тест «20 слов за 2 минуты»</summary>
             <div class="content">
                 <p>инструмент активации нейронного контура вашей темы. когда мы пишем слова на скорость, мы обходим логические фильтры сознания и поднимаем пласт бессознательных ассоциаций.</p>
                 <p><strong>механика:</strong> включите таймер на своем телефоне на 120 секунд. зафиксируйте тему на листе и начните безостановочно писать любые слова-ассоциации, которые приходят в голову в контексте этого запроса.</p>
@@ -297,7 +301,7 @@
         </p>
 
         <details>
-            <summary>АЛГОРИТМ 1. КЛАССИЧЕСКИЙ АСО-1 (СНЯТИЕ ОГРАНИЧЕНИЙ)</summary>
+            <summary>алгоритм 1. классический <span class="abbr-text">асо</span>-1 (снятие ограничений)</summary>
             <div class="content">
                 <p>инструмент для работы с острыми состояниями при сильном стрессе, панике, финансовых затыках или ступоре.</p>
                 <h3>пошаговый протокол:</h3>
@@ -314,20 +318,20 @@
         </details>
 
         <details>
-            <summary>АЛГОРИТМ 2. АСО-ЭКСПРЕСС</summary>
+            <summary>алгоритм 2. <span class="abbr-text">асо</span>-экспресс</summary>
             <div class="content">
                 <p>используется в полевых условиях, когда необходимо оперативно снизить пик соматического напряжения (например, перед важным звонком или при внезапном страхе).</p>
                 <h3>особенности протокола:</h3>
                 <ul>
-                    <li><strong>формат:</strong> работа выполняется на небольшом плотном листке бумаги (блокнот или блок для записей) маркером, линером или обычной ручкой.</li>
-                    <li><strong>механика:</strong> после секундного катарсиса (выброса) округляются только самые очевидные, бросающиеся в глаза пересечения.</li>
+                    <li><strong>формат:</strong> работа выполняется на небольшом формате бумаги (блокнот, карточка, чек) маркером, линером или обычной ручкой.</li>
+                    <li><strong>механика:</strong> после секундного катарсиса (выброс) округляются только самые очевидные, бросающиеся в глаза пересечения.</li>
                     <li><strong>оптимизация:</strong> этапы интеграции цвета и проведения линий поля здесь вторичны и могут быть пропущены. Задача — за 3–5 минут зафиксировать соматический выдох.</li>
                 </ul>
             </div>
         </details>
 
         <details>
-            <summary>АЛГОРИТМ 3. АСО: РАСШИРЕНИЕ КОНТЕКСТА (НА ЛИСТАХ)</summary>
+            <summary>алгоритм 3. <span class="abbr-text">асо</span>: расширение контекста (на листах)</summary>
             <div class="content">
                 <p>используется, когда масштаб затыка велик (системный застой, долгие процессы) и выброс физически «не помещается» на один лист, вызывая соматический саботаж и сопротивление.</p>
                 <h3>особенности протокола:</h3>
@@ -339,13 +343,13 @@
         </details>
 
         <details>
-            <summary>АЛГОРИТМ 4. АВН (АЛГОРИТМ ВЫЯВЛЕНИЯ НАМЕРЕНИЙ)</summary>
+            <summary>алгоритм 4. <span class="abbr-text">авн</span> (алгоритм выявления намерений)</summary>
             <div class="content">
                 <p>моделирование траекторий. используется, когда явных ограничений нет, но нужно определиться с целями, набрать ресурс, увидеть новые возможности или сделать выбор.</p>
                 <h3>особенности протокола:</h3>
                 <ul>
                     <li><strong>отсутствие катарсиса:</strong> в этом алгоритме нет выброса. Процесс начинается сразу с заполнения листа свободными нейрографическими линиями фона.</li>
-                    <li><strong>проявление фигур:</strong> в получившемся полей линий маркер начинает интуитивно нащупывать и проявлять геометрические контуры (круги), символизирующие скрытые ресурсы, цели или возможности. Все новые пересечения бережно сопрягаются.</li>
+                    <li><strong>проявление фигур:</strong> в получившемся поле линий маркер начинает интуитивно нащупывать и проявлять геометрические контуры (круги), символизирующие скрытые ресурсы, цели или возможности. Все новые пересечения бережно сопрягаются.</li>
                 </ul>
             </div>
         </details>
